@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b4b6822-6e4e-4100-80c0-f10b99b4a0ee" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/brand_sales/HELP.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/brand_sales/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/brand_sales/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/brand_sales/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/brand_sales/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/brand_sales/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/brand_sales/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/brand_sales/src/main/java/com/example/brand_sales/BrandSalesApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/brand_sales/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/brand_sales/src/test/java/com/example/brand_sales/BrandSalesApplicationTests.java" beforeDir="false" />
-    </list>
+    <list default="true" id="8b4b6822-6e4e-4100-80c0-f10b99b4a0ee" name="변경" comment="1분마다 금액 업데이트" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -140,11 +129,25 @@
       <updated>1747273150391</updated>
       <workItem from="1747273151685" duration="86000" />
       <workItem from="1747273248494" duration="18974000" />
-      <workItem from="1747354108579" duration="10559000" />
+      <workItem from="1747354108579" duration="11123000" />
     </task>
+    <task id="LOCAL-00001" summary="1분마다 금액 업데이트">
+      <option name="closed" value="true" />
+      <created>1747369170852</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1747369170852</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add files via upload" />
+    <MESSAGE value="1분마다 금액 업데이트" />
+    <option name="LAST_COMMIT_MESSAGE" value="1분마다 금액 업데이트" />
   </component>
 </project>
