@@ -1,0 +1,17 @@
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT" />
+    </root>
+
+    <!-- Reduce the log level for specific noisy components -->
+    <logger name="org.apache.kafka" level="WARN"/>
+    <logger name="org.apache.flink" level="WARN"/>
+    <logger name="org.apache.flink.runtime.checkpoint" level="INFO"/>
+    <logger name="com.example.brand_sales" level="INFO"/>
+</configuration>
