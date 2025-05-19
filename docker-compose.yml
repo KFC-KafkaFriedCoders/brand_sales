@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  jobmanager:
+    image: flink:1.18-scala_2.12-java17
+    ports:
+      - "8081:8081"
+    environment:
+      - |
+        FLINK_PROPERTIES=
+        jobmanager.rpc.address: jobmanager
+        jobmanager.bind-host: 0.0.0.0
+        env.java.opts: --add-opens java.base/java.util=ALL-UNNAMED
+        serialization.type: kryo
+        pipeline.serialization.kryo.unsafe: true
+    command: jobmanager
+    volumes:
+      - ./build/libs:/opt/flink/jars
+
+  taskmanager:
+    image: flink:1.18-scala_2.12-java17
+    depends_on:
+      - jobmanager
+    environment:
+      - |
+        FLINK_PROPERTIES=
+        jobmanager.rpc.address: jobmanager
+        taskmanager.numberOfTaskSlots: 2
+        env.java.opts: --add-opens java.base/java.util=ALL-UNNAMED
+        serialization.type: kryo
+        pipeline.serialization.kryo.unsafe: true
+    command: taskmanager
+    volumes:
+      - ./build/libs:/opt/flink/jars

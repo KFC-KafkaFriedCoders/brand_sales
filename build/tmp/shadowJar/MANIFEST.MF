@@ -1,3 +1,4 @@
 Manifest-Version: 1.0
-Main-Class: com.kafka.detector.DuplicatePaymentDetectorApp
+Main-Class: com.example.brand_sales.BrandAnalyticsApp
+File-Encoding: UTF-8
 

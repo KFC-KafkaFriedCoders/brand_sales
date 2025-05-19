@@ -12,6 +12,19 @@ java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(17)
     }
+    // 소스 파일 인코딩 설정
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+// 프로젝트 전체 인코딩 설정
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+// 자바독 인코딩 설정
+tasks.withType(Javadoc) {
+    options.encoding = 'UTF-8'
 }
 
 configurations {
@@ -58,13 +71,39 @@ dependencies {
 }
 
 application {
-    mainClass = 'com.example.brand_sales.MinuteBrandSalesApp'
+    mainClass = 'com.example.brand_sales.BrandAnalyticsApp'
+}
+
+// 실행 설정
+run {
+    // 인코딩 설정 추가
+    jvmArgs = [
+            '-Dfile.encoding=UTF-8',
+            '-Dconsole.encoding=UTF-8',
+            '-Dsun.jnu.encoding=UTF-8',
+            '--add-opens', 'java.base/java.util=ALL-UNNAMED',
+            '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
+            '--add-opens', 'java.base/java.lang.reflect=ALL-UNNAMED',
+            '--add-opens', 'java.base/java.text=ALL-UNNAMED',
+            '--add-opens', 'java.desktop/java.awt.font=ALL-UNNAMED',
+            '--add-opens', 'java.base/java.nio.charset=ALL-UNNAMED'
+    ]
+
+    // 시스템 프로퍼티로도 인코딩 설정
+    systemProperty 'file.encoding', 'UTF-8'
+    systemProperty 'console.encoding', 'UTF-8'
+    systemProperty 'sun.jnu.encoding', 'UTF-8'
+
+    // 표준 입출력 인코딩 설정
+    standardInput = new ByteArrayInputStream(new byte[0])
+    standardOutput = System.out
+    errorOutput = System.err
 }
 
 // JAR build configuration
 jar {
     manifest {
-        attributes 'Main-Class': 'com.example.brand_sales.MinuteBrandSalesApp'
+        attributes 'Main-Class': 'com.example.brand_sales.BrandAnalyticsApp'
     }
     from {
         configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
@@ -74,7 +113,8 @@ jar {
 
 shadowJar {
     manifest {
-        attributes 'Main-Class': 'com.example.brand_sales.MinuteBrandSalesApp'
+        attributes 'Main-Class': 'com.example.brand_sales.BrandAnalyticsApp'
+        attributes 'File-Encoding': 'UTF-8'
     }
     mergeServiceFiles()
     append 'META-INF/spring.handlers'
